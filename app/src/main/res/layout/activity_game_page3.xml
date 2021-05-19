@@ -4,41 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GamePage1">
-
-
-
+    tools:context=".GamePage3">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="344dp"
         android:layout_height="266dp"
         android:layout_marginTop="68dp"
-        android:text="叮鈴鈴~叮鈴鈴~ 已經早上七點了 再不起床出門 去瑪麗亞基金會就要遲到了"
+        android:text="結束了上午的課程,現在來到了午飯時間,但是有幾樣菜是我不喜歡吃的,我該吃光光還是挑食呢?"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
-        android:id="@+id/btnsleep"
+        android:id="@+id/btnbad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginTop="528dp"
-        android:text="賴床"
+        android:text="挑食!"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnwake"
+        android:id="@+id/btngood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="528dp"
         android:layout_marginEnd="84dp"
-        android:text="起床"
+        android:text="吃完!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
-        <activity android:name=".GamePage1"></activity>
+        <activity android:name=".GamePage9"></activity>
+        <activity android:name=".GamePage8" />
+        <activity android:name=".GamePage7" />
+        <activity android:name=".GamePage6" />
+        <activity android:name=".GamePage5" />
+        <activity android:name=".GamePage4" />
+        <activity android:name=".GamePage3" />
+        <activity android:name=".GamePage2" />
+        <activity android:name=".GamePage1" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
