@@ -27,7 +27,9 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
         }else if(v.id.equals(R.id.btnAI)){
             if(txvIsRight.text.equals("正確"))
             {
-                intent = Intent(this@GamePage2, GamePage3::class.java)
+                intent = Intent(this@GamePage2, DrawCheck::class.java)
+                intent.putExtra("表情",txvAnswer.text)
+                intent.putExtra("頁數",2)
                 startActivity(intent)
             }else{
                 txvIsRight.text="請先回答正確再進行試試看!"
