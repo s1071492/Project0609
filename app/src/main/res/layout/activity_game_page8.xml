@@ -11,7 +11,7 @@
         android:layout_width="345dp"
         android:layout_height="320dp"
         android:layout_marginTop="56dp"
-        android:text="雖然很不捨,但是我還是放下了玩具去幫忙做家事,做完家事後洗完澡,媽媽獎勵了我一個布丁!有幫忙做家事真是太好了!吃完後,時間也不早了,今天真是快樂的一天!"
+        android:text="雖然很不捨,但是我還是放下了玩具去幫忙做家事,做完家事後洗完澡,媽媽獎勵了我一個布丁!有幫忙做家事真是太好了!吃完後,該上床睡覺了,今天真是快樂的一天!"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

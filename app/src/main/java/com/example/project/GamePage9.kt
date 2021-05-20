@@ -11,7 +11,7 @@ class GamePage9 : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page9)
         btnRe.setOnClickListener(this)
-        btnEnd.setOnClickListener(this)
+        //btnEnd.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {

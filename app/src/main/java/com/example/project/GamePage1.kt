@@ -12,6 +12,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page1)
         btnwake.setOnClickListener(this)
+        btnsleep.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -19,7 +20,8 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
             intent = Intent(this@GamePage1, GamePage2::class.java)
             startActivity(intent)
         }else if(v.id.equals(R.id.btnsleep)){
-            TODO()
+            intent = Intent(this@GamePage1, GamePage2_1::class.java)
+            startActivity(intent)
         }
     }
 }

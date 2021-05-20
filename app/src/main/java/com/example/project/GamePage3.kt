@@ -11,11 +11,15 @@ class GamePage3 : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page3)
         btngood.setOnClickListener(this)
+        btnbad.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         if(v.id.equals(R.id.btngood)){
             intent = Intent(this@GamePage3, GamePage4::class.java)
+            startActivity(intent)
+        }else{
+            intent = Intent(this@GamePage3, GamePage4_1::class.java)
             startActivity(intent)
         }
     }

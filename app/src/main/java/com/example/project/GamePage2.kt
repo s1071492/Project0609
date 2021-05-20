@@ -7,12 +7,15 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_game_page2.*
 
 
+
 class GamePage2 : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page2)
         btnHappy.setOnClickListener(this)
         btnAI.setOnClickListener(this)
+        btnSad.setOnClickListener(this)
+        btnAngry.setOnClickListener(this)
 
 
     }
@@ -29,7 +32,11 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             }else{
                 txvIsRight.text="請先回答正確再進行試試看!"
             }
-        }else{
+        }else if(v.id.equals(R.id.btnSad)){
+            txvAnswer.text=btnSad.text
+            txvIsRight.text="錯誤!請再看一次故事"
+        }else if(v.id.equals(R.id.btnAngry)){
+            txvAnswer.text=btnAngry.text
             txvIsRight.text="錯誤!請再看一次故事"
         }
     }
