@@ -11,7 +11,7 @@
         android:layout_width="344dp"
         android:layout_height="266dp"
         android:layout_marginTop="68dp"
-        android:text="結束了上午的課程,現在來到了午飯時間,但是有一道菜是青椒,我不喜歡吃青椒,而且吃過早餐後也不怎麼餓,我該吃光光還是挑食呢?"
+        android:text="餓著肚子,結束了上午的課程,終於來到午飯時間了!但是有一道菜是青椒,我不喜歡吃青椒,可是我沒吃早餐,現在好餓,我該吃光光還是挑食呢?"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"

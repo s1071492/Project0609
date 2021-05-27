@@ -38,6 +38,7 @@ class DrawCheck : AppCompatActivity() {
                     intent = getIntent()
                     var no = intent.getIntExtra("頁數",0)
                     if(no ==2) intent = Intent(this@DrawCheck, GamePage3::class.java)
+                    if(no ==2_1) intent = Intent(this@DrawCheck, GamePage3_1::class.java)//+
                     else if(no==4)intent = Intent(this@DrawCheck, GamePage5::class.java)
                     else if(no==5)intent = Intent(this@DrawCheck, GamePage6::class.java)
                     else if(no==6)intent = Intent(this@DrawCheck, GamePage7::class.java)

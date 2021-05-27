@@ -31,7 +31,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
         mper.reset()
 
         if(v.id.equals(R.id.btnPlayer)){
-            mper = MediaPlayer.create(this, R.raw.tcyang)
+            mper = MediaPlayer.create(this, R.raw.gamepage1)
             mper.start()
         }
 

@@ -11,17 +11,17 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btnExit.setOnClickListener(this)
-        btnStart.setOnClickListener(this)
+        imgStart.setOnClickListener(this)
+        imgExit.setOnClickListener(this)
 
     }
 
     override fun onClick(v:View) {
-        if(v.id.equals(R.id.btnStart)){
+        if(v.id.equals(R.id.imgStart)){
             intent = Intent(this@MainActivity, GamePage1::class.java)
             startActivity(intent)
 
-        }else if(v.id.equals(R.id.btnExit)){
+        }else if(v.id.equals(R.id.imgExit)){
             System.exit(0)
         }
     }

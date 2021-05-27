@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="259dp"
         android:layout_height="125dp"
         android:gravity="center"
@@ -19,26 +20,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133" />
 
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="211dp"
-        android:layout_height="106dp"
-        android:text="開始遊戲"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imgStart"
+        android:layout_width="191dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="448dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:srcCompat="@drawable/start" />
 
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="159dp"
-        android:layout_height="70dp"
-        android:text="離開"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/imgExit"
+        android:layout_width="191dp"
+        android:layout_height="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
+        app:layout_constraintTop_toBottomOf="@+id/imgStart"
+        app:srcCompat="@drawable/exit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

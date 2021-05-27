@@ -4,14 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_game_page2.*
 import kotlinx.android.synthetic.main.activity_game_page4.*
-import kotlinx.android.synthetic.main.activity_game_page4.btnAI
-import kotlinx.android.synthetic.main.activity_game_page4.btnAngry
-import kotlinx.android.synthetic.main.activity_game_page4.btnHappy
-import kotlinx.android.synthetic.main.activity_game_page4.btnSad
-import kotlinx.android.synthetic.main.activity_game_page4.txvAnswer
-import kotlinx.android.synthetic.main.activity_game_page4.txvIsRight
+
 
 
 class GamePage4 : AppCompatActivity(),View.OnClickListener {
