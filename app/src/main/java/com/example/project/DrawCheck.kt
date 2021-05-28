@@ -40,9 +40,12 @@ class DrawCheck : AppCompatActivity() {
                     if(no ==2) intent = Intent(this@DrawCheck, GamePage3::class.java)
                     if(no ==2_1) intent = Intent(this@DrawCheck, GamePage3_1::class.java)//+
                     else if(no==4)intent = Intent(this@DrawCheck, GamePage5::class.java)
+                    else if(no==4_1)intent = Intent(this@DrawCheck, GamePage5_1::class.java)//+
                     else if(no==5)intent = Intent(this@DrawCheck, GamePage6::class.java)
+                    else if(no==5_1)intent = Intent(this@DrawCheck, GamePage6::class.java)//+
                     else if(no==6)intent = Intent(this@DrawCheck, GamePage7::class.java)
                     else if(no==8)intent = Intent(this@DrawCheck, GamePage9::class.java)
+                    else if(no==8_1)intent = Intent(this@DrawCheck, GamePage9::class.java)//+
 
                     startActivity(intent)
                     finish()

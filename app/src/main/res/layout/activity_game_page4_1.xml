@@ -10,12 +10,13 @@
         android:id="@+id/textView2"
         android:layout_width="345dp"
         android:layout_height="320dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:text="我只吃了我愛吃的東西,老師看到後叫我把剩下的也都吃光,不能挑食,我真的好討厭吃青椒,好難過"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -85,5 +86,17 @@
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgplay1"
+        android:layout_width="92dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="316dp"
+        android:onClick="StartPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/play" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

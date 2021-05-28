@@ -63,7 +63,7 @@
         android:layout_width="345dp"
         android:layout_height="320dp"
         android:layout_marginTop="56dp"
-        android:text="完蛋了!!怎麼感覺我只睡了一下但實際上已經過去了一小時 要趕不上公車了!於是我早餐也沒吃就飛奔出去趕公車 雖然趕上公車了 但是我肚子好餓 難過.."
+        android:text="睡過頭了!!!早餐來不及吃了,先快點去搭公車吧!總算是趕上公車了,但是沒吃到早餐,肚子好餓,難過!"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,5 +88,16 @@
         android:layout_marginTop="484dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imgplay1"
+        android:layout_width="92dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="240dp"
+        android:onClick="StartPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/play" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

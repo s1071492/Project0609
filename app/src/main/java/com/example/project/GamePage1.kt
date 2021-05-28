@@ -30,7 +30,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
     fun StartPlay(v: View){
         mper.reset()
 
-        if(v.id.equals(R.id.btnPlayer)){
+        if(v.id.equals(R.id.imgplay1)){
             mper = MediaPlayer.create(this, R.raw.gamepage1)
             mper.start()
         }

@@ -10,12 +10,12 @@ class GamePage9 : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page9)
-        btnRe.setOnClickListener(this)
+        imghome.setOnClickListener(this)
         //btnEnd.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
-        if(v.id.equals(R.id.btnRe)){
+        if(v.id.equals(R.id.imghome)){
             intent = Intent(this@GamePage9, MainActivity::class.java)
             startActivity(intent)
         }
