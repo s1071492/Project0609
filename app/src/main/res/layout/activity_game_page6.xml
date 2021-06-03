@@ -23,8 +23,8 @@
         android:layout_marginTop="408dp"
         android:text="您的答案"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="207dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
