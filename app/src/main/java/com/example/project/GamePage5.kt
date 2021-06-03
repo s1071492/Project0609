@@ -39,7 +39,7 @@ class GamePage5 : AppCompatActivity(),View.OnClickListener {
             {
                 intent = Intent(this@GamePage5, DrawCheck::class.java)
                 intent.putExtra("表情",txvAnswer.text)
-                intent.putExtra("頁數",2)
+                intent.putExtra("頁數",5)
                 startActivity(intent)
             }else{
                 Toast.makeText(this, "請先回答正確再進行試試看!", Toast.LENGTH_SHORT).show();

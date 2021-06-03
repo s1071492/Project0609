@@ -6,23 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".GamePage3">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="344dp"
-        android:layout_height="266dp"
-        android:layout_marginTop="68dp"
-        android:text="回到家後我和家人一起享用麥當勞,剛剛被插隊的壞心情一下子就不見了,吃飽後做完功課,我正在玩玩具,但是媽媽叫我幫忙做家事,我好不想做!"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gamepage7" />
 
     <Button
         android:id="@+id/btnDo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="528dp"
         android:text="幫忙做家事"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,20 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="528dp"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="72dp"
         android:text="玩玩具"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="134dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="444dp"
-        android:text="您的選擇是?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.274"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -60,4 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

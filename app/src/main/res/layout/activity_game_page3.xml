@@ -6,17 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".GamePage3">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="344dp"
-        android:layout_height="266dp"
-        android:layout_marginTop="64dp"
-        android:text="結束了上午的課程,現在來到了午飯時間,但是有一道菜是青椒,我不喜歡吃青椒,而且吃過早餐後也不怎麼餓,我該吃光光還是挑食呢?"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gamepage3" />
 
     <Button
         android:id="@+id/btnbad"
@@ -38,17 +36,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="134dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="444dp"
-        android:text="您的選擇是?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.274"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
@@ -60,4 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
