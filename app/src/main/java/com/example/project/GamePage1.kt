@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_game_page1.*
 
 
+
+
 class GamePage1 : AppCompatActivity(),View.OnClickListener {
     lateinit var mper: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {

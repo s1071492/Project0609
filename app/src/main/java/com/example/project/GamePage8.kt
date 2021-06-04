@@ -6,34 +6,32 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_game_page4.*
-import kotlinx.android.synthetic.main.activity_game_page6.*
+
 import kotlinx.android.synthetic.main.activity_game_page8.*
-import kotlinx.android.synthetic.main.activity_game_page8.btnAI
-import kotlinx.android.synthetic.main.activity_game_page8.btnAngry
-import kotlinx.android.synthetic.main.activity_game_page8.btnHappy
-import kotlinx.android.synthetic.main.activity_game_page8.btnSad
-import kotlinx.android.synthetic.main.activity_game_page8.txvAnswer
-import kotlinx.android.synthetic.main.activity_game_page8.txvIsRight
+
+
 
 class GamePage8 : AppCompatActivity(),View.OnClickListener {
     lateinit var mper: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page8)
-        btnAngry.setOnClickListener(this)
-        btnHappy.setOnClickListener(this)
-        btnSad.setOnClickListener(this)
-        btnAI.setOnClickListener(this)
+        btnangry.setOnClickListener(this)
+        btnhappy.setOnClickListener(this)
+        btnsad.setOnClickListener(this)
+        btnai.setOnClickListener(this)
         mper = MediaPlayer()
     }
 
     override fun onClick(v: View) {
-        if(v.id.equals(R.id.btnHappy)){
-            txvAnswer.text=btnHappy.text
+        if(v.id.equals(R.id.btnhappy)){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.correct)
+            mper.start()
+            txvAnswer.text="開心"
             Toast.makeText(this, "您選擇的是開心,回答正確!", Toast.LENGTH_SHORT).show();
             txvIsRight.text="正確"
-        }else if(v.id.equals(R.id.btnAI)){
+        }else if(v.id.equals(R.id.btnai)){
             if(txvIsRight.text.equals("正確"))
             {
                 intent = Intent(this@GamePage8, DrawCheck::class.java)
@@ -43,13 +41,19 @@ class GamePage8 : AppCompatActivity(),View.OnClickListener {
             }else{
                 Toast.makeText(this, "請先回答正確再進行試試看!", Toast.LENGTH_SHORT).show();
             }
-        }else if(v.id.equals(R.id.btnSad)){
+        }else if(v.id.equals(R.id.btnsad)){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.wrong)
+            mper.start()
             Toast.makeText(this, "您選擇的是難過,回答錯誤!", Toast.LENGTH_SHORT).show();
-            txvAnswer.text=btnSad.text
+            txvAnswer.text="難過"
             txvIsRight.text="錯誤!請再看一次故事"
-        }else if(v.id.equals(R.id.btnAngry)){
+        }else if(v.id.equals(R.id.btnangry)){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.wrong)
+            mper.start()
             Toast.makeText(this, "您選擇的是生氣,回答錯誤!", Toast.LENGTH_SHORT).show();
-            txvAnswer.text=btnAngry.text
+            txvAnswer.text="生氣"
             txvIsRight.text="錯誤!請再看一次故事"
         }
     }
@@ -57,7 +61,7 @@ class GamePage8 : AppCompatActivity(),View.OnClickListener {
         mper.reset()
 
         if(v.id.equals(R.id.imgplay1)){
-            mper = MediaPlayer.create(this, R.raw.gamepage1)
+            mper = MediaPlayer.create(this, R.raw.gamepage8)
             mper.start()
         }
 

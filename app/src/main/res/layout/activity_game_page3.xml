@@ -40,10 +40,10 @@
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="256dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play" />

@@ -8,7 +8,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.project.ml.Drawface
+import com.example.project.ml.Drawfinal
 import kotlinx.android.synthetic.main.activity_draw_check.*
 import org.tensorflow.lite.support.image.TensorImage
 
@@ -78,7 +78,7 @@ class DrawCheck : AppCompatActivity() {
         intent = getIntent()
         var face = intent.getStringExtra("表情")
 
-        val model = Drawface.newInstance(this)
+        val model = Drawfinal.newInstance(this)
 
         // Creates inputs for reference.
         val image = TensorImage.fromBitmap(bitmap)

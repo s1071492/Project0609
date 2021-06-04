@@ -5,7 +5,10 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+
 import kotlinx.android.synthetic.main.activity_game_page3.*
+
+
 
 class GamePage3 : AppCompatActivity(),View.OnClickListener {
     lateinit var mper: MediaPlayer
@@ -30,7 +33,7 @@ class GamePage3 : AppCompatActivity(),View.OnClickListener {
         mper.reset()
 
         if(v.id.equals(R.id.imgplay1)){
-            mper = MediaPlayer.create(this, R.raw.gamepage1)
+            mper = MediaPlayer.create(this, R.raw.gamepage3)
             mper.start()
         }
 

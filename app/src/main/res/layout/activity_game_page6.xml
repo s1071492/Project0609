@@ -37,45 +37,42 @@
         app:srcCompat="@drawable/gamepage6" />
 
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout5"
+        android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:columnCount="2"
+        app:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:orientation="horizontal"
-        app:rowCount="2">
+        app:rowCount="1">
 
-        <Button
-            android:id="@+id/btnHappy"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="開心"
-            app:layout_constraintEnd_toStartOf="@+id/btnSad"
-            app:layout_gravity="fill" />
+        <ImageView
+            android:id="@+id/btnhappy"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
 
-        <Button
-            android:id="@+id/btnSad"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="難過"
-            app:layout_constraintStart_toEndOf="@+id/btnHappy"
-            app:layout_gravity="fill" />
+            app:srcCompat="@drawable/btnhappy" />
 
-        <Button
-            android:id="@+id/btnAngry"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="生氣"
-            app:layout_constraintEnd_toStartOf="@+id/btnAI"
-            app:layout_gravity="fill" />
+        <ImageView
+            android:id="@+id/btnsad"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="4dp"
+            app:srcCompat="@drawable/btnsad" />
 
-        <Button
-            android:id="@+id/btnAI"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="馬上試試!"
-            app:layout_constraintStart_toEndOf="@+id/btnAngry"
-            app:layout_gravity="fill" />
+        <ImageView
+            android:id="@+id/btnangry"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+            app:srcCompat="@drawable/btnangry" />
+
+        <ImageView
+            android:id="@+id/btnai"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="4dp"
+            app:srcCompat="@drawable/btnai" />
     </androidx.gridlayout.widget.GridLayout>
 
 
