@@ -171,8 +171,8 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                 for (output in outputs) {
                     when (output.label) {
                         "smile" -> Result += "微笑"
-                        "no face" -> Result += "面無表情"
-
+                        "sad" -> Result += "難過"
+                        "angry" -> Result += "生氣"
                         /*"star" -> Result += "星形"
                         "triangle" -> Result = "三角形"
 
