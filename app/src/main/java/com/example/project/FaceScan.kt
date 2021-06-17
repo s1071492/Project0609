@@ -32,12 +32,17 @@ import kotlinx.android.synthetic.main.activity_select.*
 
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import 	android.os.CountDownTimer
+import java.util.*
+import kotlin.concurrent.schedule
+import kotlin.concurrent.schedule
 
 // Listener for the result of the ImageAnalyzer
 typealias ImageProxyListener = (bmp: Bitmap) -> Unit
 
 class FaceScan : AppCompatActivity(),PermissionListener {
     private lateinit var cameraExecutor: ExecutorService
+    var ans = "0"
 
     private class ImageAnalyzer(ctx: Context, private val listener: ImageProxyListener) :
         ImageAnalysis.Analyzer {
@@ -86,12 +91,8 @@ class FaceScan : AppCompatActivity(),PermissionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_face_scan)
-        btnleave.setOnClickListener(object: View.OnClickListener{
-            override fun onClick(p0: View?) {
-                intent = Intent(this@FaceScan,GamePage2::class.java)
-                startActivity(intent)
-            }
-        })
+
+
         // Request camera permissions
         Dexter.withContext(this)
             .withPermission(android.Manifest.permission.CAMERA)
@@ -100,8 +101,10 @@ class FaceScan : AppCompatActivity(),PermissionListener {
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
     override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
-        Toast.makeText(this, "您已允許拍照權限", Toast.LENGTH_SHORT).show()
+
         startCamera()
+
+
     }
 
     override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
@@ -124,6 +127,10 @@ class FaceScan : AppCompatActivity(),PermissionListener {
     }
 
     private fun startCamera() {
+        Timer().schedule(10000){
+
+        }
+
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
         cameraProviderFuture.addListener(Runnable {
@@ -137,8 +144,9 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                     it.setSurfaceProvider(viewFinder.createSurfaceProvider())
                 }
 
+
             // Select back camera as a default
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+            val cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
             //val cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA  //自拍
 
             // Set up the image analysis use case which will process frames in real time
@@ -168,17 +176,34 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                         sortByDescending { it.score } // 排序，高匹配率優先
                     }.take(1)
                 var Result: String = ""
+                intent = getIntent()
+                var face = intent.getStringExtra("表情")
                 for (output in outputs) {
                     when (output.label) {
-                        "smile" -> Result += "微笑"
-                        "sad" -> Result += "難過"
-                        "angry" -> Result += "生氣"
-                        /*"star" -> Result += "星形"
-                        "triangle" -> Result = "三角形"
+                        "smile" -> Result = "開心"
+                        "angry" -> Result = "生氣"
+                        "sad" -> Result = "難過"
 
-                         */
                     }
+                    if(Result.equals(face)) ans = "1"
+                    else ans = "0"
                     Result += ": " + String.format("%.1f%%", output.score * 100.0f) + ";  "
+                    if (ans.equals("1")){
+                        intent = getIntent()
+                        var no = intent.getIntExtra("頁數",0)
+                        if(no ==2) intent = Intent(this@FaceScan, GamePage3::class.java)
+                        if(no ==2_1) intent = Intent(this@FaceScan, GamePage3_1::class.java)//+
+                        else if(no==4)intent = Intent(this@FaceScan, GamePage5::class.java)
+                        else if(no==4_1)intent = Intent(this@FaceScan, GamePage5_1::class.java)//+
+                        else if(no==5)intent = Intent(this@FaceScan, GamePage6::class.java)
+                        else if(no==5_1)intent = Intent(this@FaceScan, GamePage6::class.java)//+
+                        else if(no==6)intent = Intent(this@FaceScan, GamePage7::class.java)
+                        else if(no==8)intent = Intent(this@FaceScan, GamePage9::class.java)
+                        else if(no==8_1)intent = Intent(this@FaceScan, GamePage9::class.java)//+
+
+                        startActivity(intent)
+                        finish()
+                    }
                 }
                 txv.text = Result
 
@@ -200,6 +225,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
             }
 
         }, ContextCompat.getMainExecutor(this))
+
     }
 
 
