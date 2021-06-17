@@ -101,6 +101,8 @@ class FaceScan : AppCompatActivity(),PermissionListener {
     }
     override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
         startCamera()
+
+
     }
 
     override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
@@ -123,7 +125,6 @@ class FaceScan : AppCompatActivity(),PermissionListener {
     }
 
     private fun startCamera() {
-
 
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
@@ -182,7 +183,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                     if(Result.equals(face)) ans = "1"
                     else ans = "0"
                     Result += ": " + String.format("%.1f%%", output.score * 100.0f) + ";  "
-                    if (ans.equals("1")){
+                    Handler(Looper.getMainLooper()).postDelayed({      if (ans.equals("1")){
                         intent = getIntent()
                         var no = intent.getIntExtra("頁數",0)
                         if(no ==2) intent = Intent(this@FaceScan, GamePage3::class.java)
@@ -197,7 +198,8 @@ class FaceScan : AppCompatActivity(),PermissionListener {
 
                         startActivity(intent)
                         finish()
-                    }
+                    }              }, 5000)
+
                 }
                 txv.text = Result
 
