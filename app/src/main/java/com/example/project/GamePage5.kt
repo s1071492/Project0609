@@ -34,7 +34,7 @@ class GamePage5 : AppCompatActivity(),View.OnClickListener {
         }else if(v.id.equals(R.id.btnai)){
             if(txvIsRight.text.equals("正確"))
             {
-                intent = Intent(this@GamePage5, DrawCheck::class.java)
+                intent = Intent(this@GamePage5, Select::class.java)
                 intent.putExtra("表情",txvAnswer.text)
                 intent.putExtra("頁數",5)
                 startActivity(intent)
