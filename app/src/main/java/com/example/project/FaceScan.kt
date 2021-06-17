@@ -32,10 +32,9 @@ import kotlinx.android.synthetic.main.activity_select.*
 
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
-import 	android.os.CountDownTimer
+import 	android.os.*
 import java.util.*
-import kotlin.concurrent.schedule
-import kotlin.concurrent.schedule
+
 
 // Listener for the result of the ImageAnalyzer
 typealias ImageProxyListener = (bmp: Bitmap) -> Unit
@@ -101,10 +100,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
     override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
-
         startCamera()
-
-
     }
 
     override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
@@ -127,9 +123,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
     }
 
     private fun startCamera() {
-        Timer().schedule(10000){
 
-        }
 
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
