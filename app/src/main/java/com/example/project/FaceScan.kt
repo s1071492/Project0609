@@ -183,8 +183,9 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                     if(Result.equals(face)) ans = "1"
                     else ans = "0"
                     Result += ": " + String.format("%.1f%%", output.score * 100.0f) + ";  "
-                    Handler(Looper.getMainLooper()).postDelayed({      if (ans.equals("1")){
-                        intent = getIntent()
+                     if (ans.equals("1")){
+                         Handler(Looper.getMainLooper()).postDelayed({
+                         intent = getIntent()
                         var no = intent.getIntExtra("頁數",0)
                         if(no ==2) intent = Intent(this@FaceScan, GamePage3::class.java)
                         if(no ==2_1) intent = Intent(this@FaceScan, GamePage3_1::class.java)//+
@@ -198,7 +199,8 @@ class FaceScan : AppCompatActivity(),PermissionListener {
 
                         startActivity(intent)
                         finish()
-                    }              }, 5000)
+                         }, 5000)
+                    }
 
                 }
                 txv.text = Result
