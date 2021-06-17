@@ -6,17 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".GamePage3">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="344dp"
-        android:layout_height="266dp"
-        android:layout_marginTop="68dp"
-        android:text="餓著肚子,結束了上午的課程,終於來到午飯時間了!但是有一道菜是青椒,我不喜歡吃青椒,可是我沒吃早餐,現在好餓,我該吃光光還是挑食呢?"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gamepage3_1" />
 
     <Button
         android:id="@+id/btnbad"
@@ -38,26 +36,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="134dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="444dp"
-        android:text="您的選擇是?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.274"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="256dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
