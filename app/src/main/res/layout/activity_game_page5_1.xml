@@ -7,67 +7,6 @@
     tools:context=".GamePage4">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="345dp"
-        android:layout_height="320dp"
-        android:layout_marginTop="56dp"
-        android:text="睡醒後發現老師給了中午有乖乖吃飯的同學一根棒棒糖,我卻什麼都沒有,因此下午我沒有積極參與課程,所以被老師罵了,生氣!!"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <androidx.gridlayout.widget.GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:columnCount="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:orientation="horizontal"
-        app:rowCount="2">
-
-        <Button
-            android:id="@+id/btnHappy"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="開心"
-            app:layout_constraintEnd_toStartOf="@+id/btnSad"
-            app:layout_gravity="fill" />
-
-        <Button
-            android:id="@+id/btnSad"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="難過"
-            app:layout_constraintStart_toEndOf="@+id/btnHappy"
-            app:layout_gravity="fill" />
-
-        <Button
-            android:id="@+id/btnAngry"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="生氣"
-            app:layout_constraintEnd_toStartOf="@+id/btnAI"
-            app:layout_gravity="fill" />
-
-        <Button
-            android:id="@+id/btnAI"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="馬上試試!"
-            app:layout_constraintStart_toEndOf="@+id/btnAngry"
-            app:layout_gravity="fill" />
-    </androidx.gridlayout.widget.GridLayout>
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="163dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="408dp"
-        android:text="此刻的心情應該?"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/txvIsRight"
         android:layout_width="149dp"
         android:layout_height="40dp"
@@ -75,27 +14,79 @@
         android:layout_marginTop="484dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txvAnswer"
         android:layout_width="163dp"
         android:layout_height="53dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="408dp"
         android:text="您的答案"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/gamepage5_1" />
 
     <ImageView
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="164dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:orientation="horizontal"
+        app:rowCount="1">
+
+        <ImageView
+            android:id="@+id/btnhappy"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+
+            app:srcCompat="@drawable/btnhappy" />
+
+        <ImageView
+            android:id="@+id/btnsad"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="4dp"
+            app:srcCompat="@drawable/btnsad" />
+
+        <ImageView
+            android:id="@+id/btnangry"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+            app:srcCompat="@drawable/btnangry" />
+
+        <ImageView
+            android:id="@+id/btnai"
+            android:layout_width="102.5dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="4dp"
+            app:srcCompat="@drawable/btnai" />
+    </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

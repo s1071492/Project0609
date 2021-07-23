@@ -5,7 +5,9 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_game_page8_1.*
+
 
 
 class GamePage8_1 : AppCompatActivity(),View.OnClickListener {
@@ -13,18 +15,22 @@ class GamePage8_1 : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page8_1)
-        btnAngry.setOnClickListener(this)
-        btnHappy.setOnClickListener(this)
-        btnSad.setOnClickListener(this)
-        btnAI.setOnClickListener(this)
+        btnangry.setOnClickListener(this)
+        btnhappy.setOnClickListener(this)
+        btnsad.setOnClickListener(this)
+        btnai.setOnClickListener(this)
         mper = MediaPlayer()
     }
 
     override fun onClick(v: View) {
-        if(v.id.equals(R.id.btnSad)){
-            txvAnswer.text=btnSad.text
+        if(v.id.equals(R.id.btnsad)){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.correct)
+            mper.start()
+            txvAnswer.text="難過"
+            Toast.makeText(this, "您選擇的是難過,回答正確!", Toast.LENGTH_SHORT).show();
             txvIsRight.text="正確"
-        }else if(v.id.equals(R.id.btnAI)){
+        }else if(v.id.equals(R.id.btnai)){
             if(txvIsRight.text.equals("正確"))
             {
                 intent = Intent(this@GamePage8_1, Select::class.java)
@@ -32,14 +38,21 @@ class GamePage8_1 : AppCompatActivity(),View.OnClickListener {
                 intent.putExtra("頁數",8_1)
                 startActivity(intent)
             }else{
-                txvIsRight.text="請先回答正確再進行試試看!"
+                Toast.makeText(this, "請先回答正確再進行試試看!", Toast.LENGTH_SHORT).show();
             }
-        }else if(v.id.equals(R.id.btnHappy)){
-            txvAnswer.text=btnHappy.text
-
+        }else if(v.id.equals(R.id.btnhappy)){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.wrong)
+            mper.start()
+            Toast.makeText(this, "您選擇的是開心,回答錯誤!", Toast.LENGTH_SHORT).show();
+            txvAnswer.text="開心"
             txvIsRight.text="錯誤!請再看一次故事"
-        }else if(v.id.equals(R.id.btnAngry)){
-            txvAnswer.text=btnAngry.text
+        }else if(v.id.equals(R.id.btnangry)){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.wrong)
+            mper.start()
+            Toast.makeText(this, "您選擇的是生氣,回答錯誤!", Toast.LENGTH_SHORT).show();
+            txvAnswer.text="生氣"
             txvIsRight.text="錯誤!請再看一次故事"
         }
     }
