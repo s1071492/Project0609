@@ -36,16 +36,54 @@ class DrawCheck : AppCompatActivity() {
                 classifyDrawing(b)
                 if (ans.equals("1")){
                     intent = getIntent()
-                    var no = intent.getIntExtra("頁數",0)
-                    if(no ==2) intent = Intent(this@DrawCheck, GamePage3::class.java)
-                    if(no ==2_1) intent = Intent(this@DrawCheck, GamePage3_1::class.java)//+
-                    else if(no==4)intent = Intent(this@DrawCheck, GamePage5::class.java)
-                    else if(no==4_1)intent = Intent(this@DrawCheck, GamePage5_1::class.java)//+
-                    else if(no==5)intent = Intent(this@DrawCheck, GamePage6::class.java)
-                    else if(no==5_1)intent = Intent(this@DrawCheck, GamePage6::class.java)//+
-                    else if(no==6)intent = Intent(this@DrawCheck, GamePage7::class.java)
-                    else if(no==8)intent = Intent(this@DrawCheck, GamePage9::class.java)
-                    else if(no==8_1)intent = Intent(this@DrawCheck, GamePage9::class.java)//+
+                    var no = intent.getIntExtra("編號",0)
+
+
+                    if(no ==2)
+                    {
+                        intent = Intent(this@DrawCheck, GamePage1::class.java)
+                        intent.putExtra("編號", 3)
+                    }
+                    else if(no ==2_1)
+                    {
+                        intent = Intent(this@DrawCheck, GamePage1::class.java)
+                        intent.putExtra("編號",3_1)
+                    }else
+
+                        if (no == 4) {
+                            intent = Intent(this@DrawCheck, GamePage2::class.java)
+                            intent.putExtra("編號", 5)
+                            intent.putExtra("表情", 2)
+                    }else
+                     if(no==4_1){
+                            intent = Intent(this@DrawCheck, GamePage2::class.java)
+                            intent.putExtra("編號",5_1)
+                            intent.putExtra("表情", 3)
+
+                     }else
+                    //+
+                     if(no==5) {
+                         intent = Intent(this@DrawCheck, GamePage2::class.java)
+                         intent.putExtra("編號", 6)
+                         intent.putExtra("表情", 3)
+                     }else
+                     if(no==5_1){
+                         intent = Intent(this@DrawCheck, GamePage2::class.java)
+                        intent.putExtra("編號",6)
+                         intent.putExtra("表情", 3)
+                     }else
+                     if(no==6){
+                         intent = Intent(this@DrawCheck, GamePage1::class.java)
+                        intent.putExtra("編號",7)
+                     }else
+                     if(no==8){
+                         intent = Intent(this@DrawCheck, GamePage2::class.java)
+                        intent.putExtra("編號",9)
+                     }else
+                     if(no==8_1){
+                         intent = Intent(this@DrawCheck, GamePage2::class.java)
+                        intent.putExtra("編號",9)
+                     }//+
 
                     startActivity(intent)
                     finish()
@@ -76,7 +114,7 @@ class DrawCheck : AppCompatActivity() {
     }
     fun classifyDrawing(bitmap : Bitmap) {
         intent = getIntent()
-        var face = intent.getStringExtra("表情")
+        var emotion = intent.getStringExtra("表情")
 
         val model = Drawfinal.newInstance(this)
 
@@ -96,7 +134,7 @@ class DrawCheck : AppCompatActivity() {
             "angry" -> Result = "生氣"
             "sad" -> Result = "難過"
         }
-        if(Result.equals(face)) ans = "1"
+        if(Result.equals(emotion)) ans = "1"
         else ans = "0"
 
         Result += ": " + String.format("%.1f%%", outputs[0].score * 100.0f)

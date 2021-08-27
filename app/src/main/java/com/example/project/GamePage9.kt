@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import kotlinx.android.synthetic.main.activity_game_page2.*
 import kotlinx.android.synthetic.main.activity_game_page9.*
 
 
@@ -21,4 +22,5 @@ class GamePage9 : AppCompatActivity(),View.OnClickListener {
             startActivity(intent)
         }
     }
+
 }
