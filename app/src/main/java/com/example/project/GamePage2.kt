@@ -113,10 +113,10 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
     fun StartPlay(v: View){
         mper.reset()
         intent=getIntent()
-        val PictureNo= intent.getIntExtra("編號",0)
+        val playNo= intent.getIntExtra("音檔",0)
         if(v.id.equals(R.id.imgplay)){
 
-            when(PictureNo){
+            when(playNo){
                 2 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
                 2_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
                 4 -> mper = MediaPlayer.create(this, R.raw.gamepage4)

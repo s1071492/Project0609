@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         if(v.id.equals(R.id.imgStart)){
             intent = Intent(this@MainActivity, GamePage1::class.java)
             intent.putExtra("編號",1)
+            intent.putExtra("音檔", 1)
             startActivity(intent)
 
         }else if(v.id.equals(R.id.imgExit)){

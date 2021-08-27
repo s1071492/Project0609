@@ -43,22 +43,26 @@ class DrawCheck : AppCompatActivity() {
                     {
                         intent = Intent(this@DrawCheck, GamePage1::class.java)
                         intent.putExtra("編號", 3)
+                        intent.putExtra("音檔", 3)
                     }
                     else if(no ==2_1)
                     {
                         intent = Intent(this@DrawCheck, GamePage1::class.java)
                         intent.putExtra("編號",3_1)
+                        intent.putExtra("音檔", 3)
                     }else
 
                         if (no == 4) {
                             intent = Intent(this@DrawCheck, GamePage2::class.java)
                             intent.putExtra("編號", 5)
                             intent.putExtra("表情", 2)
+                            intent.putExtra("音檔", 5)
                     }else
                      if(no==4_1){
                             intent = Intent(this@DrawCheck, GamePage2::class.java)
                             intent.putExtra("編號",5_1)
                             intent.putExtra("表情", 3)
+                            intent.putExtra("音檔", 5)
 
                      }else
                     //+
@@ -66,15 +70,18 @@ class DrawCheck : AppCompatActivity() {
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                          intent.putExtra("編號", 6)
                          intent.putExtra("表情", 3)
+                         intent.putExtra("音檔", 6)
                      }else
                      if(no==5_1){
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                         intent.putExtra("編號",6)
                          intent.putExtra("表情", 3)
+                         intent.putExtra("音檔", 6)
                      }else
                      if(no==6){
                          intent = Intent(this@DrawCheck, GamePage1::class.java)
                         intent.putExtra("編號",7)
+                         intent.putExtra("音檔", 7)
                      }else
                      if(no==8){
                          intent = Intent(this@DrawCheck, GamePage2::class.java)

@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_game_page1.*
 
 
 class GamePage1 : AppCompatActivity(),View.OnClickListener {
-    var playNo=0
+
     lateinit var mper: MediaPlayer
 
 
@@ -44,12 +44,18 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 3_1->intent.putExtra("表情", 1)
                 7->intent.putExtra("表情", 1)
             }
+            when(PictureNo){
+                1->intent.putExtra("音檔", 2)
+                3->intent.putExtra("音檔", 4)
+                3_1->intent.putExtra("音檔", 2)
+                7->intent.putExtra("音檔", 8)
+            }
 
             //intent.putExtra("表情", 1)//1開心 2難過 3生氣
             startActivity(intent)
         }else if(v.id.equals(R.id.btnNo)) {
             intent=getIntent()
-            var PictureNo= intent.getIntExtra("編號",0)
+            val PictureNo= intent.getIntExtra("編號",0)
             intent = Intent(this@GamePage1, GamePage2::class.java)
             when (PictureNo) {
 
@@ -64,12 +70,18 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 3_1->intent.putExtra("表情", 2)
                 7->intent.putExtra("表情", 2)
             }
+            when(PictureNo){
+                1->intent.putExtra("音檔", 2)
+                3->intent.putExtra("音檔", 4)
+                3_1->intent.putExtra("音檔", 2)
+                7->intent.putExtra("音檔", 8)
+            }
             startActivity(intent)
         }
     }
     fun ShowPicture(){
         intent=getIntent()
-        var PictureNo= intent.getIntExtra("編號",0)
+        val PictureNo= intent.getIntExtra("編號",0)
         when (PictureNo){
             1 -> img.setImageResource(R.drawable.gamepage1)
             3 -> img.setImageResource(R.drawable.gamepage3)
@@ -81,14 +93,16 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
     }
     fun StartPlay(v: View){
         mper.reset()
+        intent=getIntent()
+        val playNo= intent.getIntExtra("音檔",0)
         if(v.id.equals(R.id.imgplay1)){
             when(playNo){
-                1 -> MediaPlayer.create(this, R.raw.gamepage1)
-                3 -> MediaPlayer.create(this, R.raw.gamepage3)
-                3_1 -> MediaPlayer.create(this, R.raw.gamepage1)
-                7 -> MediaPlayer.create(this, R.raw.gamepage7)
+                1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
+                3 -> mper=MediaPlayer.create(this, R.raw.gamepage3)
+                3_1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
+                7 -> mper=MediaPlayer.create(this, R.raw.gamepage7)
             }
-            //mper = MediaPlayer.create(this, R.raw.gamepage1)
+
             mper.start()
         }
 
