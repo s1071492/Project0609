@@ -41,6 +41,18 @@
         app:layout_constraintVertical_bias="0.491"
         app:srcCompat="@drawable/gamepage2" />
 
+    <ImageView
+        android:id="@+id/imgplay3"
+        android:layout_width="100dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="180dp"
+        android:onClick="StartPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/play" />
+
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"

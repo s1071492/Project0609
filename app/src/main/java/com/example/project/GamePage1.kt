@@ -18,10 +18,24 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page1)
+
         btnYes.setOnClickListener(this)
         btnNo.setOnClickListener(this)
-        mper = MediaPlayer()
+
+
         ShowPicture()
+        mper = MediaPlayer()
+        intent=getIntent()
+
+        val playNo= intent.getIntExtra("音檔",1)
+        mper.start()
+        when(playNo){
+            1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
+            3 -> mper=MediaPlayer.create(this, R.raw.gamepage3)
+            3_1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
+            7 -> mper=MediaPlayer.create(this, R.raw.gamepage7)
+        }
+
 
     }
 
@@ -94,7 +108,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
     fun StartPlay(v: View){
         mper.reset()
         intent=getIntent()
-        val playNo= intent.getIntExtra("音檔",0)
+        val playNo= intent.getIntExtra("音檔",1)
         if(v.id.equals(R.id.imgplay1)){
             when(playNo){
                 1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
@@ -104,6 +118,8 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
             }
 
             mper.start()
+        }else if(v.id.equals(R.id.imgplay2)){
+            mper.pause()
         }
 
     }

@@ -22,6 +22,18 @@
         app:srcCompat="@drawable/gamepage1" />
 
     <ImageView
+        android:id="@+id/imgplay2"
+        android:layout_width="92dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="240dp"
+        android:onClick="StartPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/play" />
+
+    <ImageView
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
         android:layout_height="54dp"

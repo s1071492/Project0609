@@ -36,8 +36,21 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
 
         mper = MediaPlayer()
         ShowPicture()
-        //ShowPicture()
 
+        intent=getIntent()
+        val playNo= intent.getIntExtra("音檔",2)
+        mper.start()
+        when(playNo){
+            2 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            2_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            4 -> mper = MediaPlayer.create(this, R.raw.gamepage4)
+            4_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            5   -> mper = MediaPlayer.create(this, R.raw.gamepage5)
+            5_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            6 -> mper = MediaPlayer.create(this, R.raw.gamepage6)
+            8 -> mper = MediaPlayer.create(this, R.raw.gamepage8)
+            8_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+        }
     }
 
     override fun onClick(v: View) {
@@ -113,9 +126,8 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
     fun StartPlay(v: View){
         mper.reset()
         intent=getIntent()
-        val playNo= intent.getIntExtra("音檔",0)
+        val playNo= intent.getIntExtra("音檔",2)
         if(v.id.equals(R.id.imgplay)){
-
             when(playNo){
                 2 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
                 2_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
@@ -129,6 +141,8 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             }
             //mper = MediaPlayer.create(this, R.raw.gamepage2)
             mper.start()
+        }else if(v.id.equals(R.id.imgplay3)){
+            mper.pause()
         }
 
     }
