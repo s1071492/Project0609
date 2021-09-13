@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         imgStart.setOnClickListener(this)
         imgExit.setOnClickListener(this)
         imgStart2.setOnClickListener(this)
+        practice.setOnClickListener(this)
         //mper = MediaPlayer()
     }
 
@@ -31,6 +32,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             intent = Intent(this@MainActivity, GamePage1::class.java)
             intent.putExtra("編號",21)
             intent.putExtra("音檔", 21)
+            startActivity(intent)
+        }
+        else if(v.id.equals(R.id.practice)){
+            intent = Intent(this@MainActivity, Select::class.java)
+            intent.putExtra("練習",1)
             startActivity(intent)
         }
     }

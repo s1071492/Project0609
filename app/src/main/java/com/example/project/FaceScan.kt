@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Matrix
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
@@ -41,7 +42,7 @@ typealias ImageProxyListener = (bmp: Bitmap) -> Unit
 class FaceScan : AppCompatActivity(),PermissionListener {
     private lateinit var cameraExecutor: ExecutorService
     var ans = "0"
-
+    lateinit var mper: MediaPlayer
     private class ImageAnalyzer(ctx: Context, private val listener: ImageProxyListener) :
         ImageAnalysis.Analyzer {
         /**
@@ -90,7 +91,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_face_scan)
 
-
+        mper = MediaPlayer()
         // Request camera permissions
         Dexter.withContext(this)
             .withPermission(android.Manifest.permission.CAMERA)
@@ -171,7 +172,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                     }.take(1)
                 var Result: String = ""
                 intent = getIntent()
-                var emotion = intent.getStringExtra("心情")
+                var emotion = intent.getStringExtra("表情")
                 for (output in outputs) {
                     when (output.label) {
                         "smile" -> Result = "開心"
@@ -182,57 +183,71 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                     if(Result.equals(emotion)) ans = "1"
                     else ans = "0"
                     Result += ": " + String.format("%.1f%%", output.score * 100.0f) + ";  "
-                     if (ans.equals("1")){
-                         Handler(Looper.getMainLooper()).postDelayed({
-                         intent = getIntent()
-                        var no = intent.getIntExtra("頁數",0)
-                             if(no ==2)
-                             {
-                                 intent = Intent(this@FaceScan, GamePage1::class.java)
-                                 intent.putExtra("編號", 3)
-                             }
-                             else if(no ==2_1)
-                             {
-                                 intent = Intent(this@FaceScan, GamePage1::class.java)
-                                 intent.putExtra("編號",3_1)
-                             }else
+                    intent = getIntent()
+                    var practice = intent.getIntExtra("練習",0)
+                    if(practice == 0) {
+                        if (ans.equals("1")) {
+                            CheckAns(ans)
+                            Handler(Looper.getMainLooper()).postDelayed({
+                                intent = getIntent()
+                                var no = intent.getIntExtra("編號", 0)
 
-                                 if (no == 4) {
-                                     intent = Intent(this@FaceScan, GamePage2::class.java)
-                                     intent.putExtra("編號", 5)
-                                 }else
-                                     if(no==4_1){
-                                         intent = Intent(this@FaceScan, GamePage2::class.java)
-                                         intent.putExtra("編號",5_1)
-                                     }else
-                                     //+
-                                         if(no==5) {
-                                             intent = Intent(this@FaceScan, GamePage2::class.java)
-                                             intent.putExtra("編號", 6)
-                                         }else
-                                             if(no==5_1){
-                                                 intent = Intent(this@FaceScan, GamePage2::class.java)
-                                                 intent.putExtra("編號",6)
-                                             }else
-                                                 if(no==6){
-                                                     intent = Intent(this@FaceScan, GamePage1::class.java)
-                                                     intent.putExtra("編號",7)
-                                                 }else
-                                                     if(no==8){
-                                                         intent = Intent(this@FaceScan, GamePage2::class.java)
-                                                         intent.putExtra("編號",9)
-                                                     }else
-                                                         if(no==8_1){
-                                                             intent = Intent(this@FaceScan, GamePage2::class.java)
-                                                             intent.putExtra("編號",9)
-                                                         }//+
+                                if (no == 2) {
+                                    intent = Intent(this@FaceScan, GamePage1::class.java)
+                                    intent.putExtra("編號", 3)
+                                } else if (no == 2_1) {
+                                    intent = Intent(this@FaceScan, GamePage1::class.java)
+                                    intent.putExtra("編號", 3_1)
+                                } else
+
+                                    if (no == 4) {
+                                        intent = Intent(this@FaceScan, GamePage2::class.java)
+                                        intent.putExtra("編號", 5)
+                                    } else
+                                        if (no == 4_1) {
+                                            intent = Intent(this@FaceScan, GamePage2::class.java)
+                                            intent.putExtra("編號", 5_1)
+                                        } else
+                                        //+
+                                            if (no == 5) {
+                                                intent =
+                                                    Intent(this@FaceScan, GamePage2::class.java)
+                                                intent.putExtra("編號", 6)
+                                            } else
+                                                if (no == 5_1) {
+                                                    intent =
+                                                        Intent(this@FaceScan, GamePage2::class.java)
+                                                    intent.putExtra("編號", 6)
+                                                } else
+                                                    if (no == 6) {
+                                                        intent = Intent(
+                                                            this@FaceScan,
+                                                            GamePage1::class.java
+                                                        )
+                                                        intent.putExtra("編號", 7)
+                                                    } else
+                                                        if (no == 8) {
+                                                            intent = Intent(
+                                                                this@FaceScan,
+                                                                GamePage2::class.java
+                                                            )
+                                                            intent.putExtra("編號", 9)
+                                                        } else
+                                                            if (no == 8_1) {
+                                                                intent = Intent(
+                                                                    this@FaceScan,
+                                                                    GamePage2::class.java
+                                                                )
+                                                                intent.putExtra("編號", 9)
+                                                            }//+
 
 
-                             startActivity(intent)
-                        finish()
-                         }, 5000)
+                                startActivity(intent)
+                                finish()
+                            }, 5000)
+                        }
                     }
-
+                    else if(practice ==1){}
                 }
                 txv.text = Result
 
@@ -255,6 +270,18 @@ class FaceScan : AppCompatActivity(),PermissionListener {
 
         }, ContextCompat.getMainExecutor(this))
 
+    }
+    fun CheckAns(ans : String){
+        if(ans.equals("1")){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.correct)
+            mper.start()
+        }
+        else{
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.wrong)
+            mper.start()
+        }
     }
 
 

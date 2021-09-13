@@ -14,23 +14,40 @@ class Select : AppCompatActivity() {
         intent = getIntent()
         var no = intent.getIntExtra("編號",0)
         var emotion = intent.getStringExtra("表情")
+        var practice = intent.getIntExtra("練習",0)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select)
-        btndraw.setOnClickListener(object: View.OnClickListener{
+        draw.setOnClickListener(object: View.OnClickListener{
             override fun onClick(p0: View?) {
-                intent = Intent(this@Select,DrawCheck::class.java)
-                intent.putExtra("表情",emotion)
-                intent.putExtra("編號",no)
-                startActivity(intent)
+                if(practice == 0) {
+                    intent = Intent(this@Select, DrawCheck::class.java)
+                    intent.putExtra("表情", emotion)
+                    intent.putExtra("編號", no)
+                    startActivity(intent)
+                }
+                else if(practice == 1){
+                    intent = Intent(this@Select, DrawCheck::class.java)
+                    intent.putExtra("練習",practice)
+                    startActivity(intent)
+                }
             }
         })
-        btnscan.setOnClickListener(object: View.OnClickListener{
+
+        scan.setOnClickListener(object: View.OnClickListener{
             override fun onClick(p0: View?) {
-                intent = Intent(this@Select,FaceScan::class.java)
-                intent.putExtra("表情",emotion)
-                intent.putExtra("編號",no)
-                startActivity(intent)
+                if(practice == 0) {
+                    intent = Intent(this@Select, FaceScan::class.java)
+                    intent.putExtra("表情", emotion)
+                    intent.putExtra("編號", no)
+                    startActivity(intent)
+                }
+                else if (practice == 1){
+                    intent = Intent(this@Select, FaceScan::class.java)
+                    intent.putExtra("練習",practice)
+                    startActivity(intent)
+                }
             }
         })
+
     }
 }
