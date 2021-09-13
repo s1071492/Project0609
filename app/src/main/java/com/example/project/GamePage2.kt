@@ -50,6 +50,15 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             6 -> mper = MediaPlayer.create(this, R.raw.gamepage6)
             8 -> mper = MediaPlayer.create(this, R.raw.gamepage8)
             8_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            22  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            22_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            24  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            24_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            25  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            26 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            28 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            28_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+            29 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
         }
     }
 
@@ -94,7 +103,15 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             6 -> img2.setImageResource(R.drawable.gamepage6)
             8 -> img2.setImageResource(R.drawable.gamepage8)
             8_1  -> img2.setImageResource(R.drawable.gamepage8_1)
-
+            22  -> img2.setImageResource(R.drawable.game2page2)
+            22_1  -> img2.setImageResource(R.drawable.game2page2_1)
+            24  -> img2.setImageResource(R.drawable.game2page4)
+            24_1  -> img2.setImageResource(R.drawable.game2page4_1)
+            25  -> img2.setImageResource(R.drawable.game2page5)
+            26-> img2.setImageResource(R.drawable.game2page6)
+            28-> img2.setImageResource(R.drawable.game2page8)
+            28_1-> img2.setImageResource(R.drawable.game2page8_1)
+            29-> img2.setImageResource(R.drawable.game2page9)
 
         }
     }
@@ -138,6 +155,15 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
                 6 -> mper = MediaPlayer.create(this, R.raw.gamepage6)
                 8 -> mper = MediaPlayer.create(this, R.raw.gamepage8)
                 8_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                22  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                22_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                24  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                24_1  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                25  -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                26 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                28 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                28_1 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
+                29 -> mper = MediaPlayer.create(this, R.raw.gamepage2)
             }
             //mper = MediaPlayer.create(this, R.raw.gamepage2)
             mper.start()

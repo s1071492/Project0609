@@ -34,6 +34,9 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
             3 -> mper=MediaPlayer.create(this, R.raw.gamepage3)
             3_1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
             7 -> mper=MediaPlayer.create(this, R.raw.gamepage7)
+            21 -> mper=MediaPlayer.create(this, R.raw.gamepage2)
+            23 -> mper=MediaPlayer.create(this, R.raw.gamepage2)
+            27 -> mper=MediaPlayer.create(this, R.raw.gamepage2)
         }
 
 
@@ -51,18 +54,27 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 3->intent.putExtra("編號", 4)
                 3_1->intent.putExtra("編號", 4)
                 7->intent.putExtra("編號", 8)
+                21->intent.putExtra("編號", 22)
+                23->intent.putExtra("編號", 24)
+                27->intent.putExtra("編號", 28)
             }
             when(PictureNo){
                 1->intent.putExtra("表情", 1)
                 3->intent.putExtra("表情", 1)
                 3_1->intent.putExtra("表情", 1)
                 7->intent.putExtra("表情", 1)
+                21->intent.putExtra("表情", 2)
+                23->intent.putExtra("表情", 2)
+                27->intent.putExtra("表情", 3)
             }
             when(PictureNo){
                 1->intent.putExtra("音檔", 2)
                 3->intent.putExtra("音檔", 4)
                 3_1->intent.putExtra("音檔", 2)
                 7->intent.putExtra("音檔", 8)
+                21->intent.putExtra("音檔", 2)
+                23->intent.putExtra("音檔", 2)
+                27->intent.putExtra("音檔", 2)
             }
 
             //intent.putExtra("表情", 1)//1開心 2難過 3生氣
@@ -77,18 +89,27 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 3->intent.putExtra("編號", 4_1)
                 3_1->intent.putExtra("編號", 4_1)
                 7->intent.putExtra("編號", 8_1)
+                21->intent.putExtra("編號", 22_1)
+                23->intent.putExtra("編號", 24_1)
+                27->intent.putExtra("編號", 28_1)
         }
             when(PictureNo){
                 1->intent.putExtra("表情", 2)
                 3->intent.putExtra("表情", 2)
                 3_1->intent.putExtra("表情", 2)
                 7->intent.putExtra("表情", 2)
+                21->intent.putExtra("表情", 1)
+                23->intent.putExtra("表情", 1)
+                27->intent.putExtra("表情", 1)
             }
             when(PictureNo){
                 1->intent.putExtra("音檔", 2)
                 3->intent.putExtra("音檔", 4)
                 3_1->intent.putExtra("音檔", 2)
                 7->intent.putExtra("音檔", 8)
+                21->intent.putExtra("音檔", 2)
+                23->intent.putExtra("音檔", 2)
+                27->intent.putExtra("音檔", 2)
             }
             startActivity(intent)
         }
@@ -101,7 +122,9 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
             3 -> img.setImageResource(R.drawable.gamepage3)
             3_1 -> img.setImageResource(R.drawable.gamepage3_1)
             7 -> img.setImageResource(R.drawable.gamepage7)
-
+            21 -> img.setImageResource(R.drawable.game2page1)
+            23 -> img.setImageResource(R.drawable.game2page3)
+            27 -> img.setImageResource(R.drawable.game2page7)
         }
 
     }
@@ -112,9 +135,13 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
         if(v.id.equals(R.id.imgplay1)){
             when(playNo){
                 1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
+
                 3 -> mper=MediaPlayer.create(this, R.raw.gamepage3)
                 3_1 -> mper=MediaPlayer.create(this, R.raw.gamepage1)
                 7 -> mper=MediaPlayer.create(this, R.raw.gamepage7)
+                21 -> mper=MediaPlayer.create(this, R.raw.gamepage2)
+                23 -> mper=MediaPlayer.create(this, R.raw.gamepage2)
+                27 -> mper=MediaPlayer.create(this, R.raw.gamepage2)
             }
 
             mper.start()

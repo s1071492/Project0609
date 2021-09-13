@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         setContentView(R.layout.activity_main)
         imgStart.setOnClickListener(this)
         imgExit.setOnClickListener(this)
+        imgStart2.setOnClickListener(this)
         //mper = MediaPlayer()
     }
 
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         }else if(v.id.equals(R.id.imgExit)){
             System.exit(0)
+        }else if(v.id.equals(R.id.imgStart2)){
+            intent = Intent(this@MainActivity, GamePage1::class.java)
+            intent.putExtra("編號",21)
+            intent.putExtra("音檔", 21)
+            startActivity(intent)
         }
     }
     /*
