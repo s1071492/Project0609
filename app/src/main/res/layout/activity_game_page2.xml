@@ -7,9 +7,6 @@
     tools:context=".GamePage2">
 
 
-
-
-
     <TextView
         android:id="@+id/txvAnswer"
         android:layout_width="wrap_content"
@@ -37,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/gamepage2" />
 
@@ -45,12 +42,12 @@
         android:id="@+id/imgplay3"
         android:layout_width="100dp"
         android:layout_height="39dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="304dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="@drawable/nosound" />
 
     <androidx.gridlayout.widget.GridLayout
@@ -58,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:columnCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/img2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:orientation="horizontal"
@@ -81,6 +78,8 @@
             android:id="@+id/btnangry"
             android:layout_width="102.5dp"
             android:layout_height="62dp"
+            app:layout_column="2"
+            app:layout_row="0"
             app:srcCompat="@drawable/btnangry" />
 
         <ImageView
@@ -95,12 +94,20 @@
         android:id="@+id/imgplay"
         android:layout_width="100dp"
         android:layout_height="39dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="304dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="@drawable/play" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/gamepage1" />
 
@@ -23,24 +23,24 @@
         android:id="@+id/imgplay2"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="292dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@drawable/nosound" />
 
     <ImageView
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="292dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@drawable/play" />
 
     <ImageView
@@ -49,19 +49,35 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnYes"
+        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/no" />
 
     <ImageView
         android:id="@+id/btnYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/yes" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
