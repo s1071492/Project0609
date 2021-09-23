@@ -7,15 +7,13 @@
     tools:context=".GamePage1">
 
 
-
-
     <ImageView
         android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -25,46 +23,45 @@
         android:id="@+id/imgplay2"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="308dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/play" />
+        app:srcCompat="@drawable/nosound" />
 
     <ImageView
         android:id="@+id/imgplay1"
         android:layout_width="92dp"
         android:layout_height="54dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="308dp"
         android:onClick="StartPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/play" />
 
-    <Button
+    <ImageView
         android:id="@+id/btnNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="140dp"
-        android:text="No"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnYes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/no" />
 
-    <Button
+    <ImageView
         android:id="@+id/btnYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
-        android:text="Yes"
+        android:layout_marginEnd="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toEndOf="@+id/btnNo" />
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/yes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,7 +49,7 @@ class DrawCheck : AppCompatActivity() {
                     {
                         intent = Intent(this@DrawCheck, GamePage1::class.java)
                         intent.putExtra("編號",3_1)
-                        intent.putExtra("音檔", 3)
+                        intent.putExtra("音檔", 3_1)
                     }else
 
                         if (no == 4) {
@@ -62,7 +62,7 @@ class DrawCheck : AppCompatActivity() {
                             intent = Intent(this@DrawCheck, GamePage2::class.java)
                             intent.putExtra("編號",5_1)
                             intent.putExtra("表情", 3)
-                            intent.putExtra("音檔", 5)
+                            intent.putExtra("音檔", 5_1)
 
                      }else
                     //+
@@ -105,19 +105,19 @@ class DrawCheck : AppCompatActivity() {
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                          intent.putExtra("編號",25)
                          intent.putExtra("表情", 3)
-                         intent.putExtra("音檔", 2)
+                         intent.putExtra("音檔", 25)
                      }
                      else if(no==24_1){
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                          intent.putExtra("編號",25)
                          intent.putExtra("表情", 3)
-                         intent.putExtra("音檔", 2)
+                         intent.putExtra("音檔", 25)
                      }
                      else if(no==25){
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                          intent.putExtra("編號",26)
                          intent.putExtra("表情", 1)
-                         intent.putExtra("音檔", 2)
+                         intent.putExtra("音檔", 26)
                      }
                      else if(no==26){
                          intent = Intent(this@DrawCheck, GamePage1::class.java)
@@ -128,13 +128,13 @@ class DrawCheck : AppCompatActivity() {
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                          intent.putExtra("編號",29)
                          intent.putExtra("表情", 1)
-                         intent.putExtra("音檔", 2)
+                         intent.putExtra("音檔", 29)
                      }
                      else if(no==28_1){
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
                          intent.putExtra("編號",25)
                          intent.putExtra("表情", 1)
-                         intent.putExtra("音檔", 2)
+                         intent.putExtra("音檔", 25)
                      }
                      else if(no==210){
                          intent = Intent(this@DrawCheck, GamePage9::class.java)
