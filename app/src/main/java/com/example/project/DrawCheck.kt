@@ -150,6 +150,7 @@ class DrawCheck : AppCompatActivity() {
                 }
                 else if(ans.equals("0")){
                     voice(0)
+
                 }
             }
         })
