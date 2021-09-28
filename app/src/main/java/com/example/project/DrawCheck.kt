@@ -135,14 +135,19 @@ class DrawCheck : AppCompatActivity() {
                      }
                      else if(no==28_1){
                          intent = Intent(this@DrawCheck, GamePage2::class.java)
-                         intent.putExtra("編號",25)
+                         intent.putExtra("編號",29)
                          intent.putExtra("表情", 1)
-                         intent.putExtra("音檔", 25)
+                         intent.putExtra("音檔", 29)
+                     }
+                     else if(no==29){
+                         intent = Intent(this@DrawCheck, GamePage2::class.java)
+                         intent.putExtra("編號",210)
+                         intent.putExtra("表情", 3)
+                         intent.putExtra("音檔", 210)
                      }
                      else if(no==210){
                          intent = Intent(this@DrawCheck, GamePage9::class.java)
                      }
-
                     //+
 
                     startActivity(intent)

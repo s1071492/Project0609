@@ -61,6 +61,7 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             28 -> mper = MediaPlayer.create(this, R.raw.game2page8)
             28_1 -> mper = MediaPlayer.create(this, R.raw.game2page8_1)
             29 -> mper = MediaPlayer.create(this, R.raw.game2page9)
+            210 -> mper = MediaPlayer.create(this, R.raw.game2page10)
         }
     }
 
@@ -102,6 +103,7 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             28-> img2.setImageResource(R.drawable.game2page8)
             28_1-> img2.setImageResource(R.drawable.game2page8_1)
             29-> img2.setImageResource(R.drawable.game2page9)
+            210-> img2.setImageResource(R.drawable.game2page10)
 
         }
     }
@@ -164,6 +166,7 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
                 28 -> mper = MediaPlayer.create(this, R.raw.game2page8)
                 28_1 -> mper = MediaPlayer.create(this, R.raw.game2page8_1)
                 29 -> mper = MediaPlayer.create(this, R.raw.game2page9)
+                210 -> mper = MediaPlayer.create(this, R.raw.game2page10)
             }
             //mper = MediaPlayer.create(this, R.raw.gamepage2)
             mper.start()
