@@ -3,6 +3,7 @@ package com.example.project
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -16,10 +17,11 @@ import org.tensorflow.lite.support.image.TensorImage
 class DrawCheck : AppCompatActivity() {
 
     var ans = "0"
-
+    lateinit var mper: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_draw_check)
+        mper = MediaPlayer()
         btn.setOnClickListener(object: View.OnClickListener{
             override fun onClick(p0: View?) {
                 handv.path.reset()
@@ -35,6 +37,7 @@ class DrawCheck : AppCompatActivity() {
                 handv.draw(c)
                 classifyDrawing(b)
                 if (ans.equals("1")){
+                    voice(1)
                     intent = getIntent()
                     var no = intent.getIntExtra("編號",0)
 
@@ -146,7 +149,7 @@ class DrawCheck : AppCompatActivity() {
                     finish()
                 }
                 else if(ans.equals("0")){
-
+                    voice(0)
                 }
             }
         })
@@ -169,6 +172,7 @@ class DrawCheck : AppCompatActivity() {
         })
 
     }
+
     fun classifyDrawing(bitmap : Bitmap) {
         intent = getIntent()
         var emotion = intent.getStringExtra("表情")
@@ -191,7 +195,7 @@ class DrawCheck : AppCompatActivity() {
             "angry" -> Result = "生氣"
             "sad" -> Result = "難過"
         }
-        if(Result.equals(emotion)) ans = "1"
+        if(Result.equals(emotion))ans = "1"
         else ans = "0"
 
         Result += ": " + String.format("%.1f%%", outputs[0].score * 100.0f)
@@ -199,8 +203,21 @@ class DrawCheck : AppCompatActivity() {
 
         // Releases model resources if no longer used.
         model.close()
-        Toast.makeText(this, Result, Toast.LENGTH_SHORT).show()
 
+
+    }
+    fun voice(ans: Int){
+        if(ans == 1){
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.correct)
+            mper.start()
+        }
+        else if(ans == 0){
+
+            mper.reset()
+            mper = MediaPlayer.create(this, R.raw.wrong)
+            mper.start()
+        }
     }
 
 

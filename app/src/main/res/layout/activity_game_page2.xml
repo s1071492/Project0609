@@ -84,12 +84,6 @@
             app:layout_row="0"
             app:srcCompat="@drawable/btnangry" />
 
-        <ImageView
-            android:id="@+id/btnai"
-            android:layout_width="102.5dp"
-            android:layout_height="62dp"
-            android:layout_marginBottom="4dp"
-            app:srcCompat="@drawable/btnai" />
     </androidx.gridlayout.widget.GridLayout>
 
     <ImageView

@@ -4,6 +4,8 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -30,7 +32,7 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
 
 
         btnhappy.setOnClickListener(this)
-        btnai.setOnClickListener(this)
+
         btnsad.setOnClickListener(this)
         btnangry.setOnClickListener(this)
 
@@ -66,18 +68,6 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
         if(v.id.equals(R.id.btnhappy)){
             MyAns=1
             btnchk()
-        }else if(v.id.equals(R.id.btnai)){
-            if(txvIsRight.text.equals("正確"))
-            {
-                intent=getIntent()
-                val PictureNo= intent.getIntExtra("編號",0)
-                intent = Intent(this@GamePage2, Select::class.java)
-                intent.putExtra("表情",txvAnswer.text)
-                intent.putExtra("編號",PictureNo)
-                startActivity(intent)
-            }else{
-                Toast.makeText(this, "請先回答正確再進行試試看!", Toast.LENGTH_SHORT).show();
-            }
         }else if(v.id.equals(R.id.btnsad)){
             MyAns=2
             btnchk()
@@ -129,6 +119,16 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             }
             Toast.makeText(this, "回答正確!", Toast.LENGTH_SHORT).show();
             txvIsRight.text="正確"
+            Handler(Looper.getMainLooper()).postDelayed({
+                if (txvIsRight.text.equals("正確")) {
+                    intent = getIntent()
+                    val PictureNo = intent.getIntExtra("編號", 0)
+                    intent = Intent(this@GamePage2, Select::class.java)
+                    intent.putExtra("表情", txvAnswer.text)
+                    intent.putExtra("編號", PictureNo)
+                    startActivity(intent)
+                }
+            },800)
         }
         else {
             mper.reset()
