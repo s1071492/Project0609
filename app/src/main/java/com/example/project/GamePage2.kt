@@ -16,10 +16,6 @@ import kotlinx.android.synthetic.main.activity_game_page2.*
 
 @GlideModule
 public final class MyAppGlideModule : AppGlideModule()
-
-
-
-
 class GamePage2 : AppCompatActivity(),View.OnClickListener {
 
 
@@ -173,7 +169,6 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
         }else if(v.id.equals(R.id.imgplay3)){
             mper.pause()
         }
-
     }
     override fun onDestroy() {
         super.onDestroy()
