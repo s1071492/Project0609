@@ -8,23 +8,26 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <Button
-        android:id="@+id/btnBack"
+    <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="上一頁" />
+        android:layout_height="79dp">
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="清除畫布"  />
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/check" />
 
-    <Button
-        android:id="@+id/btnCheck"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="確認答案" />
+        <ImageView
+            android:id="@+id/eraser"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:srcCompat="@drawable/eraser" />
+    </androidx.gridlayout.widget.GridLayout>
 
     <com.example.project.FaceDraw
         android:id="@+id/handv"
