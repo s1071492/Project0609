@@ -29,6 +29,7 @@ class GamePage9 : AppCompatActivity(),View.OnClickListener {
         if(v.id.equals(R.id.imghome)){
             intent = Intent(this@GamePage9, MainActivity::class.java)
             startActivity(intent)
+
         }
     }
 
