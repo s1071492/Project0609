@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         imgStart2.setOnClickListener(this)
         practice.setOnClickListener(this)
         //mper = MediaPlayer()
+    }
+    override fun onBackPressed() {
+        Toast.makeText(this, "不支援此功能!", Toast.LENGTH_SHORT).show()
     }
 
     override fun onClick(v:View) {

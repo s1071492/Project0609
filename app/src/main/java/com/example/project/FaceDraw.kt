@@ -8,6 +8,7 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class FaceDraw(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
@@ -25,6 +26,7 @@ class FaceDraw(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
         canvas.drawColor(Color.BLACK)  //背景
         canvas.drawPath(path, paint)
     }
+
 
 
 

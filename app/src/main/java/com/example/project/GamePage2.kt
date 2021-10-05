@@ -60,6 +60,9 @@ class GamePage2 : AppCompatActivity(),View.OnClickListener {
             210 -> mper = MediaPlayer.create(this, R.raw.game2page10)
         }
     }
+    override fun onBackPressed() {
+        Toast.makeText(this, "不支援此功能!", Toast.LENGTH_SHORT).show()
+    }
 
     override fun onClick(v: View) {
         if(v.id.equals(R.id.btnhappy)){
