@@ -1,6 +1,7 @@
 package com.example.project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,10 +11,14 @@ import kotlinx.android.synthetic.main.activity_game_page9.*
 
 
 class GamePage9 : AppCompatActivity(),View.OnClickListener {
+    lateinit var mper: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page9)
         imghome.setOnClickListener(this)
+        mper = MediaPlayer()
+        mper = MediaPlayer.create(this, R.raw.cheer)
+        mper.start()
         //btnEnd.setOnClickListener(this)
     }
     override fun onBackPressed() {

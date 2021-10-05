@@ -187,8 +187,9 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                     var practice = intent.getIntExtra("練習",0)
                     if(practice == 0) {
                         if (ans.equals("1")) {
-                            CheckAns(ans)
+
                             Handler(Looper.getMainLooper()).postDelayed({
+                                CheckAns(ans)
                                 intent = getIntent()
                                 var no = intent.getIntExtra("編號", 0)
 
