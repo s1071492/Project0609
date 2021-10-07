@@ -47,6 +47,8 @@ class DrawCheck : AppCompatActivity(),View.OnClickListener {
     }
 
     override fun onClick(v: View) {
+        intent = getIntent()
+        var practice = intent.getIntExtra("練習",0)
         if (v.id.equals(R.id.eraser)) {
             handv.path.reset()
             handv.invalidate()
@@ -60,123 +62,162 @@ class DrawCheck : AppCompatActivity(),View.OnClickListener {
             val c = Canvas(b)
             handv.draw(c)
             classifyDrawing(b)
-            if (ans.equals("1")) {
-                voice(1)
-                intent = getIntent()
-                var no = intent.getIntExtra("編號", 0)
+            if (practice == 1) {
+
+            }
+            else if (practice != 1) {
+                if (ans.equals("1")) {
+                    voice(1)
+                    intent = getIntent()
+                    var no = intent.getIntExtra("編號", 0)
 
 
-                if (no == 2) {
-                    intent = Intent(this@DrawCheck, GamePage1::class.java)
-                    intent.putExtra("編號", 3)
-                    intent.putExtra("音檔", 3)
-                } else if (no == 2_1) {
-                    intent = Intent(this@DrawCheck, GamePage1::class.java)
-                    intent.putExtra("編號", 3_1)
-                    intent.putExtra("音檔", 3_1)
-                } else
-
-                    if (no == 4) {
-                        intent = Intent(this@DrawCheck, GamePage2::class.java)
-                        intent.putExtra("編號", 5)
-                        intent.putExtra("表情", 2)
-                        intent.putExtra("音檔", 5)
+                    if (no == 2) {
+                        intent = Intent(this@DrawCheck, GamePage1::class.java)
+                        intent.putExtra("編號", 3)
+                        intent.putExtra("音檔", 3)
+                    } else if (no == 2_1) {
+                        intent = Intent(this@DrawCheck, GamePage1::class.java)
+                        intent.putExtra("編號", 3_1)
+                        intent.putExtra("音檔", 3_1)
                     } else
-                        if (no == 4_1) {
-                            intent = Intent(this@DrawCheck, GamePage2::class.java)
-                            intent.putExtra("編號", 5_1)
-                            intent.putExtra("表情", 3)
-                            intent.putExtra("音檔", 5_1)
 
+                        if (no == 4) {
+                            intent = Intent(this@DrawCheck, GamePage2::class.java)
+                            intent.putExtra("編號", 5)
+                            intent.putExtra("表情", 2)
+                            intent.putExtra("音檔", 5)
                         } else
-                        //+
-                            if (no == 5) {
+                            if (no == 4_1) {
                                 intent = Intent(this@DrawCheck, GamePage2::class.java)
-                                intent.putExtra("編號", 6)
+                                intent.putExtra("編號", 5_1)
                                 intent.putExtra("表情", 3)
-                                intent.putExtra("音檔", 6)
+                                intent.putExtra("音檔", 5_1)
+
                             } else
-                                if (no == 5_1) {
+                            //+
+                                if (no == 5) {
                                     intent = Intent(this@DrawCheck, GamePage2::class.java)
                                     intent.putExtra("編號", 6)
                                     intent.putExtra("表情", 3)
                                     intent.putExtra("音檔", 6)
                                 } else
-                                    if (no == 6) {
-                                        intent = Intent(this@DrawCheck, GamePage1::class.java)
-                                        intent.putExtra("編號", 7)
-                                        intent.putExtra("音檔", 7)
+                                    if (no == 5_1) {
+                                        intent = Intent(this@DrawCheck, GamePage2::class.java)
+                                        intent.putExtra("編號", 6)
+                                        intent.putExtra("表情", 3)
+                                        intent.putExtra("音檔", 6)
                                     } else
-                                        if (no == 8) {
-                                            intent = Intent(this@DrawCheck, GamePage2::class.java)
-                                            intent.putExtra("編號", 9)
+                                        if (no == 6) {
+                                            intent = Intent(this@DrawCheck, GamePage1::class.java)
+                                            intent.putExtra("編號", 7)
+                                            intent.putExtra("音檔", 7)
                                         } else
-                                            if (no == 8_1) {
+                                            if (no == 8) {
                                                 intent =
                                                     Intent(this@DrawCheck, GamePage2::class.java)
                                                 intent.putExtra("編號", 9)
-                                            } else if (no == 22) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage1::class.java)
-                                                intent.putExtra("編號", 23)
-                                                intent.putExtra("音檔", 23)
-                                            } else if (no == 22_1) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage1::class.java)
-                                                intent.putExtra("編號", 23)
-                                                intent.putExtra("音檔", 23)
-                                            } else if (no == 24) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage2::class.java)
-                                                intent.putExtra("編號", 25)
-                                                intent.putExtra("表情", 3)
-                                                intent.putExtra("音檔", 25)
-                                            } else if (no == 24_1) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage2::class.java)
-                                                intent.putExtra("編號", 25)
-                                                intent.putExtra("表情", 3)
-                                                intent.putExtra("音檔", 25)
-                                            } else if (no == 25) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage2::class.java)
-                                                intent.putExtra("編號", 26)
-                                                intent.putExtra("表情", 1)
-                                                intent.putExtra("音檔", 26)
-                                            } else if (no == 26) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage1::class.java)
-                                                intent.putExtra("編號", 27)
-                                                intent.putExtra("音檔", 27)
-                                            } else if (no == 28) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage2::class.java)
-                                                intent.putExtra("編號", 29)
-                                                intent.putExtra("表情", 1)
-                                                intent.putExtra("音檔", 29)
-                                            } else if (no == 28_1) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage2::class.java)
-                                                intent.putExtra("編號", 29)
-                                                intent.putExtra("表情", 1)
-                                                intent.putExtra("音檔", 29)
-                                            } else if (no == 29) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage2::class.java)
-                                                intent.putExtra("編號", 210)
-                                                intent.putExtra("表情", 3)
-                                                intent.putExtra("音檔", 210)
-                                            } else if (no == 210) {
-                                                intent =
-                                                    Intent(this@DrawCheck, GamePage9::class.java)
-                                            }
-                //+
+                                            } else
+                                                if (no == 8_1) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 9)
+                                                } else if (no == 22) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage1::class.java
+                                                        )
+                                                    intent.putExtra("編號", 23)
+                                                    intent.putExtra("音檔", 23)
+                                                } else if (no == 22_1) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage1::class.java
+                                                        )
+                                                    intent.putExtra("編號", 23)
+                                                    intent.putExtra("音檔", 23)
+                                                } else if (no == 24) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 25)
+                                                    intent.putExtra("表情", 3)
+                                                    intent.putExtra("音檔", 25)
+                                                } else if (no == 24_1) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 25)
+                                                    intent.putExtra("表情", 3)
+                                                    intent.putExtra("音檔", 25)
+                                                } else if (no == 25) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 26)
+                                                    intent.putExtra("表情", 1)
+                                                    intent.putExtra("音檔", 26)
+                                                } else if (no == 26) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage1::class.java
+                                                        )
+                                                    intent.putExtra("編號", 27)
+                                                    intent.putExtra("音檔", 27)
+                                                } else if (no == 28) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 29)
+                                                    intent.putExtra("表情", 1)
+                                                    intent.putExtra("音檔", 29)
+                                                } else if (no == 28_1) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 29)
+                                                    intent.putExtra("表情", 1)
+                                                    intent.putExtra("音檔", 29)
+                                                } else if (no == 29) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage2::class.java
+                                                        )
+                                                    intent.putExtra("編號", 210)
+                                                    intent.putExtra("表情", 3)
+                                                    intent.putExtra("音檔", 210)
+                                                } else if (no == 210) {
+                                                    intent =
+                                                        Intent(
+                                                            this@DrawCheck,
+                                                            GamePage9::class.java
+                                                        )
+                                                }
+                    //+
 
-                startActivity(intent)
-                finish()
-            } else if (ans.equals("0")) {
-                voice(0)
+                    startActivity(intent)
+                    finish()
+                } else if (ans.equals("0")) {
+                    voice(0)
 
+                }
             }
         }
 
