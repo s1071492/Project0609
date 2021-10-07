@@ -17,7 +17,7 @@ class GamePage9 : AppCompatActivity(),View.OnClickListener {
         setContentView(R.layout.activity_game_page9)
         imghome.setOnClickListener(this)
         mper = MediaPlayer()
-        mper = MediaPlayer.create(this, R.raw.cheer)
+        mper = MediaPlayer.create(this, R.raw.end)
         mper.start()
         //btnEnd.setOnClickListener(this)
     }
