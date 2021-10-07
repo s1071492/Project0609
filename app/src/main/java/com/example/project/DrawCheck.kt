@@ -45,9 +45,7 @@ class DrawCheck : AppCompatActivity(),View.OnClickListener {
         })
 
     }
-    override fun onBackPressed() {
-        Toast.makeText(this, "不支援此功能!", Toast.LENGTH_SHORT).show()
-    }
+
     override fun onClick(v: View) {
         if (v.id.equals(R.id.eraser)) {
             handv.path.reset()
