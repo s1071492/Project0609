@@ -4,7 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Select">
+    tools:context=".Select"><![CDATA[
+
+
+
+
+
+    androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.0"
+    />
+
+
+
+
+
+
+
+
+
+    ]]>
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,27 +37,35 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/select" />
-
-    <ImageView
-        android:id="@+id/scan"
-        android:layout_width="215dp"
-        android:layout_height="239dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/draw"
-        app:srcCompat="@drawable/scan" />
 
     <ImageView
         android:id="@+id/draw"
         android:layout_width="220dp"
         android:layout_height="217dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
         app:srcCompat="@drawable/draw" />
+
+    <ImageView
+        android:id="@+id/scan"
+        android:layout_width="215dp"
+        android:layout_height="239dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/draw"
+        app:srcCompat="@drawable/scan" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             startActivity(intent)
 
         }else if(v.id.equals(R.id.imgExit)){
-            System.exit(0)
+            finishAffinity();
         }else if(v.id.equals(R.id.imgStart2)){
             intent = Intent(this@MainActivity, GamePage1::class.java)
             intent.putExtra("編號",21)
