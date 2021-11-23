@@ -69,7 +69,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 7->intent.putExtra("表情", 1)
                 21->intent.putExtra("表情", 2)
                 23->intent.putExtra("表情", 2)
-                27->intent.putExtra("表情", 3)
+                27->intent.putExtra("表情", 1)
             }
             when(PictureNo){
                 1->intent.putExtra("音檔", 2)
@@ -78,7 +78,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 7->intent.putExtra("音檔", 8)
                 21->intent.putExtra("音檔", 22)
                 23->intent.putExtra("音檔", 24)
-                27->intent.putExtra("音檔", 28)
+                27->intent.putExtra("音檔", 28_1)
             }
 
             //intent.putExtra("表情", 1)//1開心 2難過 3生氣
@@ -95,7 +95,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 7->intent.putExtra("編號", 8_1)
                 21->intent.putExtra("編號", 22_1)
                 23->intent.putExtra("編號", 24_1)
-                27->intent.putExtra("編號", 28_1)
+                27->intent.putExtra("編號", 28)
         }
             when(PictureNo){
                 1->intent.putExtra("表情", 2)
@@ -104,7 +104,7 @@ class GamePage1 : AppCompatActivity(),View.OnClickListener {
                 7->intent.putExtra("表情", 2)
                 21->intent.putExtra("表情", 1)
                 23->intent.putExtra("表情", 1)
-                27->intent.putExtra("表情", 1)
+                27->intent.putExtra("表情", 3)
             }
             when(PictureNo){
                 1->intent.putExtra("音檔", 2_1)
