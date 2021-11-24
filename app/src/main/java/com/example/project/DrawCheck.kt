@@ -227,7 +227,7 @@ class DrawCheck : AppCompatActivity(),View.OnClickListener {
     fun classifyDrawing(bitmap : Bitmap) {
         intent = getIntent()
         var emotion = intent.getStringExtra("表情")
-
+        var practice = intent.getIntExtra("練習",0)
         val model = Drawfinal.newInstance(this)
 
         // Creates inputs for reference.
@@ -250,7 +250,7 @@ class DrawCheck : AppCompatActivity(),View.OnClickListener {
         else ans = "0"
 
         Result += ": " + String.format("%.1f%%", outputs[0].score * 100.0f)
-
+        if(practice ==1){Toast.makeText(this, Result, Toast.LENGTH_SHORT).show()}
 
         // Releases model resources if no longer used.
         model.close()
