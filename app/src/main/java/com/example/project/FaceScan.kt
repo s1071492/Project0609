@@ -179,6 +179,7 @@ class FaceScan : AppCompatActivity(),PermissionListener {
                         "smile" -> Result = "開心"
                         "angry" -> Result = "生氣"
                         "sad" -> Result = "難過"
+                        "blank" -> Result = "尚未掃到"
 
                     }
                     if(Result.equals(emotion)) ans = "1"
